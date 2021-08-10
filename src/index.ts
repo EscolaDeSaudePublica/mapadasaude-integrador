@@ -1,8 +1,17 @@
-import api from './api';
+import dotenv from 'dotenv';
+import { apiMapasSaude } from './api';
 
-const testeApi = async () => {
-  const response = await api.post('/api/agent/describe');
+dotenv.config();
+
+const describeAgente = async () => {
+  const response = await apiMapasSaude.get('/api/agent/describe');
   console.log(response);
 };
 
-testeApi();
+const findAgentesMapasSaude = async () => {
+  const response = await apiMapasSaude.get('/api/agent/find');
+  console.log(response);
+};
+
+describeAgente();
+findAgentesMapasSaude();

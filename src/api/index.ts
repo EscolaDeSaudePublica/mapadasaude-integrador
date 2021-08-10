@@ -1,12 +1,11 @@
 import axios from 'axios';
 
-const api = axios.create({
+const apiMapasSaude = axios.create({
   baseURL: 'http://localhost',
   headers: {
-    authorization:
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwayI6InNySFVpUm9pSUpqRmxqMWdMelB5MnNUMnNLdW1EbUlZIn0.u7LqWvT1QbrhIaiDBWK8Lwg36KflAZFEEwb3GWbX8es',
+    authorization: process.env.MAPAS_JWT,
     'MapasSDK-REQUEST': 'true',
   },
 });
 
-export default api;
+export { apiMapasSaude };
