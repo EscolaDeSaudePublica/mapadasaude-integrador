@@ -1,7 +1,8 @@
 import dotenv from 'dotenv';
-import { apiMapasSaude } from './api';
+dotenv.config(); // necessário aqui
 
-dotenv.config();
+import { apiMapasSaude } from './api';
+import FormData from 'form-data';
 
 const describeAgente = async () => {
   const response = await apiMapasSaude.get('/api/agent/describe');
@@ -13,5 +14,16 @@ const findAgentesMapasSaude = async () => {
   console.log(response);
 };
 
+const createAgentesMapasSaude = async () => {
+  const agenteFromData = new FormData();
+  agenteFromData.append('name', 'Teste'.concat(String(Date.now())));
+  agenteFromData.append('type', '2');
+  const response = await apiMapasSaude.post('/agent/index', agenteFromData, {
+    headers: agenteFromData.getHeaders(),
+  });
+  console.log(response);
+};
+
 describeAgente();
 findAgentesMapasSaude();
+createAgentesMapasSaude();
