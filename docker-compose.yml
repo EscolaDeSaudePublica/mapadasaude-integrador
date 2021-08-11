@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  mapa-saude-integration:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/app
