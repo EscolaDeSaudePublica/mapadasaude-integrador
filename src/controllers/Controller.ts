@@ -10,7 +10,7 @@ class Controller {
   }
 
   exec() {
-    throw new Error('Not implemented');
+    console.log(`Executando ${this.config.name}`);
   }
 }
 
