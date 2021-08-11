@@ -13,7 +13,7 @@ const describeAgente = async () => {
     const response = await apiMapasSaude.get('/api/agent/describe');
     console.log(response);
   } catch (error) {
-    console.log('algo de errado aconteceu');
+    console.log(error);
   }
 };
 
@@ -22,10 +22,10 @@ const createAgentesMapasSaude = async () => {
     const agenteFromData = new FormData();
     agenteFromData.append('name', 'Teste'.concat(String(Date.now())));
     agenteFromData.append('type', '2');
-    const response = await apiMapasSaude.post('/agent/index', agenteFromData, {
+    const { data } = await apiMapasSaude.post('/agent/index', agenteFromData, {
       headers: agenteFromData.getHeaders(),
     });
-    console.log(response);
+    console.log(data);
   } catch (error) {
     console.log('algo de errado aconteceu');
   }
@@ -37,3 +37,5 @@ cron.schedule('* * * * *', sacsController.exec);
 cron.schedule('* * * * *', createAgentesMapasSaude);
 
 cron.schedule('0 0 * * * *', () => console.log('Diariamente a meia noite'));
+
+describeAgente();

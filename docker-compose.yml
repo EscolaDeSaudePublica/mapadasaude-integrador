@@ -1,7 +1,7 @@
-version: "3"
+version: '3'
 
 services:
-  mapa-saude-integration:
+  mapadasaude-integrador:
     build: .
     command: npm start
     volumes:
