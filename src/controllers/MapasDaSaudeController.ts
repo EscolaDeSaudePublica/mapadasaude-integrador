@@ -3,7 +3,6 @@ import Controller from './Controller';
 
 class MapasDaSaudeController extends Controller {
   async exec() {
-    super.exec();
     try {
       const data = buscarDescribeAgentesMapasDaSaude();
       console.log(data);

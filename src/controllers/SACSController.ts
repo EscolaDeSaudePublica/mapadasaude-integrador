@@ -4,7 +4,6 @@ import Controller from './Controller';
 // apenas testes ainda
 class SACSController extends Controller {
   async exec() {
-    super.exec();
     try {
       const response = await apiMapasSaude.get('/api/agent/describe');
       console.log(response);
