@@ -1,7 +1,7 @@
 import { apiMapasSaude } from '../api';
 import Controller from './Controller';
 
-// apenas testes ainda 
+// apenas testes ainda
 class SACSController extends Controller {
   async exec() {
     super.exec();

@@ -17,6 +17,15 @@ Arquiterura do projeto
 
 ![cover](.github/arquitetura.png?style=flat)
 
+## 🖥 Ferramentas utilizadas
+
+Listar aqui as fessamentas usadas para o desenvolvimento.
+
+- Ferramenta 1
+- Ferramenta 2
+- Ferramenta 3
+- Ferramenta 4
+
 ## 🔨 Configurando
 
 Explicnado a configuração do projeto.
