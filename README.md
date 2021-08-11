@@ -2,13 +2,14 @@
 
 <p align="center">
     <img alt="company" src="https://img.shields.io/static/v1?label=company&message=ESP&color=13ad47&labelColor=0A1033">
-    <img alt="license" src="https://img.shields.io/static/v1?label=license&message=GNU&color=13ad47&labelColor=0A1033">
+    <img alt="license" src="https://img.shields.io/static/v1?label=license&message=GPL&color=13ad47&labelColor=0A1033">
     <img alt="stack" src="https://img.shields.io/static/v1?label=stack&message=node&color=13ad47&labelColor=0A1033">
+    <img alt="stack" src="https://img.shields.io/static/v1?label=stack&message=typescript&color=3178c6&labelColor=0A1033">
 </p>
 
 ## 🔥 Introdução
 
-Descrição do projeto aqui.
+Repositório responsável por realizar as integrações com serviços externos e integrar ao mapa da saúde.
 
 ## 🛠️ Arquitetura
 
