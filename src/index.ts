@@ -9,7 +9,7 @@ const sacsController: Controller = new SACSController({
 });
 
 const mapasDaSaudeController: Controller = new MapasDaSaudeController({
-  name: 'SACSController',
+  name: 'MapasDaSaudeController',
 });
 
 cron.schedule('* * * * *', mapasDaSaudeController.exec);

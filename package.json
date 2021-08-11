@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev -r dotenv/config src/index.ts"
+    "dev": "ts-node-dev -r dotenv/config src/index.ts",
+    "start": "ts-node-dev -r dotenv/config src/index.ts",
+    "buil": ""
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.2",
