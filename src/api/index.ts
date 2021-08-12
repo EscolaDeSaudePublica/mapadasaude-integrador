@@ -9,10 +9,9 @@ const apiMapasSaude = axios.create({
 });
 
 const apiSACS = axios.create({
-  baseURL: process.env.MAPAS_URL,
+  baseURL: process.env.SACS_URL,
   headers: {
-    authorization: process.env.MAPAS_JWT,
-    'MapasSDK-REQUEST': 'true',
+    Authorization: process.env.SACS_JWT,
   },
 });
 
