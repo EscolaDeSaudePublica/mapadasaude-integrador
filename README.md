@@ -35,6 +35,8 @@ Arquiterura do projeto
 - [Typescript](https://www.typescriptlang.org/) - superset para o Javascript
 - [Jest](https://jestjs.io/pt-BR/) - framework de Testes em JavaScript com um foco na simplicidade
 - [Yarn](https://classic.yarnpkg.com/en/) - gerenciador de dependências
+- [Eslint](https://eslint.org/) - linter
+- [Prettier](https://prettier.io/) - formatador de código
 
 ## 🔧 Configurando o projeto
 
@@ -71,6 +73,7 @@ Variáveis de hambiente:
 Feito isso, agora está na hora de coloca o projeto para funcionar usando o `docker compose`:
 
 ```bash
+# instalando o container usando docker compose
 docker-compose up
 ```
 
