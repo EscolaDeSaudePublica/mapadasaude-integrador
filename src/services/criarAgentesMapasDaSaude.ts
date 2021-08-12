@@ -1,16 +1,16 @@
-import { apiMapasSaude } from '../api';
 import FormData from 'form-data';
-import { v4 as uuid } from 'uuid';
+import { apiMapasSaude } from '../api';
 
-const criarAgentesMapasDaSaude = async () => {
+// TODO: colocar aqui as informações necessárias
+export interface AgenteMapasDaSaude {
+  name: string;
+}
+
+const criarAgenteMapasDaSaude = async (agente: AgenteMapasDaSaude) => {
   const agenteFromData = new FormData();
 
-  const user_id = uuid();
-
   // Criando o FormData
-  agenteFromData.append('name', `Teste${user_id}`);
-  agenteFromData.append('user_id', user_id);
-  agenteFromData.append('type', '1');
+  agenteFromData.append('name', agente.name);
 
   const { data } = await apiMapasSaude.post('/agent/index', agenteFromData, {
     headers: agenteFromData.getHeaders(),
@@ -19,4 +19,4 @@ const criarAgentesMapasDaSaude = async () => {
   return data;
 };
 
-export default criarAgentesMapasDaSaude;
+export default criarAgenteMapasDaSaude;
