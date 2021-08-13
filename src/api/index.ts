@@ -1,9 +1,15 @@
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
+
+const mapaDaSaudeToken = jwt.sign(
+  { pk: process.env.MAPAS_PUBLIC_KEY },
+  process.env.MAPAS_PRIVATE_KEY
+);
 
 const apiMapasSaude = axios.create({
   baseURL: process.env.MAPAS_URL,
   headers: {
-    authorization: process.env.MAPAS_JWT,
+    authorization: mapaDaSaudeToken,
     'MapasSDK-REQUEST': 'true',
   },
 });

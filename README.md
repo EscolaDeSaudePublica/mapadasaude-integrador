@@ -64,7 +64,8 @@ Agora, será necessário editar as variáveis de hambiente que estão no arquivo
 Variáveis de hambiente:
 
 - `MAPAS_URL` - URL da API do Mapas da Saúde
-- `MAPAS_JWT` - Token de autenticação do Mapas da Saúde
+- `MAPAS_PUBLIC_KEY` - `Chave pública` criada no Mapas da Saúde
+- `MAPAS_PRIVATE_KEY` - `Chave privada` criada no Mapas da Saúde
 - `SACS_URL` - URL da API do SACS
 - `SACS_JWT` - Token de autenticação do SACS
 
