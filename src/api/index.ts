@@ -2,7 +2,7 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
 const mapaDaSaudeToken = jwt.sign(
-  { pk: process.env.MAPAS_PUBLIC_KEY },
+  { pk: process.env.MAPAS_PUBLIC_KEY, tm: Date.now() },
   process.env.MAPAS_PRIVATE_KEY
 );
 

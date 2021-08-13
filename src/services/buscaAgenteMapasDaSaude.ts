@@ -1,10 +1,16 @@
 import { apiMapasSaude } from '../api';
 
-const buscaAgenteMapasDaSaude = async (id: number) => {
+/**
+ * Busca um a gente no Mapas da Saúde pelo id e email
+ * @param id Id do Agente
+ * @param emailPublico Email público do agente
+ * @returns
+ */
+const buscaAgenteMapasDaSaude = async (emailPublico: string) => {
   const { data } = await apiMapasSaude.get('/api/agent/findOne', {
     params: {
-      id: `EQ(${id})`,
-      '@select': 'id,name,documento',
+      '@select': 'id,name,emailPublico',
+      emailPublico: `EQ(${emailPublico})`,
     },
   });
 

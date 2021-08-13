@@ -5,6 +5,7 @@ import { apiMapasSaude } from '../api';
 export interface AgenteMapasDaSaude {
   name: string;
   documento: string; // CPF
+  emailPublico: string;
 }
 
 const criarAgenteMapasDaSaude = async (agente: AgenteMapasDaSaude) => {
@@ -13,6 +14,9 @@ const criarAgenteMapasDaSaude = async (agente: AgenteMapasDaSaude) => {
   // Criando o FormData
   agenteFromData.append('name', agente.name);
   agenteFromData.append('documento', agente.documento);
+  agenteFromData.append('emailPublico', agente.emailPublico);
+
+  // 🔥 Diferenciado 🔥
   agenteFromData.append('type', String(1));
 
   const { data } = await apiMapasSaude.post('/agent/index', agenteFromData, {
