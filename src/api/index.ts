@@ -1,6 +1,11 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
+import dotenv from 'dotenv';
+
+// Necessário no início
+dotenv.config();
+
 const mapaDaSaudeToken = jwt.sign(
   { pk: process.env.MAPAS_PUBLIC_KEY, tm: Date.now() },
   process.env.MAPAS_PRIVATE_KEY

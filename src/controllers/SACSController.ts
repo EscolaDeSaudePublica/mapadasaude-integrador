@@ -1,6 +1,7 @@
 import buscaAgenteMapasDaSaude from '../services/buscaAgenteMapasDaSaude';
 import buscarUsuariosSACS from '../services/buscarUsuariosSACS';
 import criarAgenteMapasDaSaude from '../services/criarAgenteMapasDaSaude';
+import editarAgenteMapasDaSaude from '../services/editarAgenteMapasDaSaude';
 import Controller from './Controller';
 
 // apenas testes ainda
@@ -20,7 +21,7 @@ class SACSController extends Controller {
          * Se existir, atualizar, caso contrário, criar um novo
          */
         if (aux) {
-          criarAgenteMapasDaSaude({
+          editarAgenteMapasDaSaude(aux.id, {
             name: agente.nome,
             documento: agente.cpf,
             emailPublico: agente.email,

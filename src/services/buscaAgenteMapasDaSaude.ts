@@ -1,5 +1,11 @@
 import { apiMapasSaude } from '../api';
 
+interface BuscaAgenteMapasDaSaudeData {
+  id: number;
+  name: string;
+  emailPublico: string;
+}
+
 /**
  * Busca um a gente no Mapas da Saúde pelo id e email
  * @param id Id do Agente
@@ -14,7 +20,7 @@ const buscaAgenteMapasDaSaude = async (emailPublico: string) => {
     },
   });
 
-  return data;
+  return data as BuscaAgenteMapasDaSaudeData;
 };
 
 export default buscaAgenteMapasDaSaude;
