@@ -1,5 +1,5 @@
 import buscarDescribeAgentesMapasDaSaude from '../../services/buscarDescribeAgentesMapasDaSaude';
-import criarAgentesMapasDaSaude from '../../services/criarAgenteMapasDaSaude';
+import criarAgenteMapasDaSaude from '../../services/criarAgenteMapasDaSaude';
 import { v4 as uuid } from 'uuid';
 import buscaAgenteMapasDaSaude from '../../services/buscaAgenteMapasDaSaude';
 import { AgenteMapasDaSaude } from '../../controllers/types';
@@ -23,7 +23,7 @@ describe('Integração - Api Mapas da Saúde', () => {
   });
 
   test('Deve ser possível criar um Agente', async () => {
-    const data = await criarAgentesMapasDaSaude(agente);
+    const data = await criarAgenteMapasDaSaude(agente);
 
     expect(data).not.toBeNull();
 
@@ -35,7 +35,13 @@ describe('Integração - Api Mapas da Saúde', () => {
   });
 
   test('Deve ser possível buscar um Agente', async () => {
-    const data = await buscaAgenteMapasDaSaude('email@email.com');
+    const data = await buscaAgenteMapasDaSaude(agente.emailPublico);
+
+    expect(data).not.toBeNull();
+  });
+
+  test('Deve ser possível deletar permanentemente um Agente', async () => {
+    const data = await buscaAgenteMapasDaSaude(agente.emailPublico);
 
     expect(data).not.toBeNull();
   });
