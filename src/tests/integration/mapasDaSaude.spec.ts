@@ -1,9 +1,8 @@
 import buscarDescribeAgentesMapasDaSaude from '../../services/buscarDescribeAgentesMapasDaSaude';
-import criarAgentesMapasDaSaude, {
-  AgenteMapasDaSaude,
-} from '../../services/criarAgenteMapasDaSaude';
+import criarAgentesMapasDaSaude from '../../services/criarAgenteMapasDaSaude';
 import { v4 as uuid } from 'uuid';
 import buscaAgenteMapasDaSaude from '../../services/buscaAgenteMapasDaSaude';
+import { AgenteMapasDaSaude } from '../../controllers/types';
 
 describe('Integração - Api Mapas da Saúde', () => {
   // Agente para teste

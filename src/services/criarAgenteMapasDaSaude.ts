@@ -1,12 +1,6 @@
 import FormData from 'form-data';
 import { apiMapasSaude } from '../api';
-
-// TODO: colocar aqui as informações necessárias
-export interface AgenteMapasDaSaude {
-  name: string;
-  documento: string; // CPF
-  emailPublico: string;
-}
+import { AgenteMapasDaSaude } from '../controllers/types';
 
 const criarAgenteMapasDaSaude = async (agente: AgenteMapasDaSaude) => {
   const agenteFromData = new FormData();

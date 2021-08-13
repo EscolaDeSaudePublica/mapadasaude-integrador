@@ -15,6 +15,10 @@ class SACSController extends Controller {
 
         const aux = await buscaAgenteMapasDaSaude(agente.email);
 
+        /*
+         * TODO: fazer verificação se o agente já existe
+         * Se existir, atualizar, caso contrário, criar um novo
+         */
         if (aux) {
           criarAgenteMapasDaSaude({
             name: agente.nome,
@@ -22,11 +26,6 @@ class SACSController extends Controller {
             emailPublico: agente.email,
           });
         } else {
-          /*
-           * TODO: fazer verificação se o agente já existe
-           * Se existir, atualizar, caso contrário, criar um novo
-           */
-
           criarAgenteMapasDaSaude({
             name: agente.nome,
             documento: agente.cpf,
