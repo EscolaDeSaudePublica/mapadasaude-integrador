@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r dotenv/config --respawn --transpile-only --ignore-watch node_modules src/index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/index.ts",
     "start": "node dist/src/index.js",
     "build": "tsc --build tsconfig.json",
-    "test": "jest --setupFiles dotenv/config --runInBand --detectOpenHandles"
+    "test": "jest --setupFiles --runInBand --detectOpenHandles"
   },
   "devDependencies": {
     "@types/jest": "^26.0.0",

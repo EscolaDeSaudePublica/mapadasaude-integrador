@@ -1,3 +1,8 @@
+import dotenv from 'dotenv';
+
+// Necessário no início
+dotenv.config();
+
 import cron from 'node-cron';
 import Controller from './controllers/Controller';
 import MapasDaSaudeController from './controllers/MapasDaSaudeController';
@@ -11,6 +16,7 @@ const mapasDaSaudeController: Controller = new MapasDaSaudeController({
   name: 'MapasDaSaudeController',
 });
 
+// Executando a cada minuto
 cron.schedule('* * * * *', mapasDaSaudeController.exec);
 cron.schedule('* * * * *', sacsController.exec);
 
