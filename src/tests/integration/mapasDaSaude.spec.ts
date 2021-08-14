@@ -13,7 +13,7 @@ describe('Integração - Api Mapas da Saúde', () => {
     emailPublico: 'email@email.com',
   };
 
-  test('Deve ser possível buscar o describe da Entidade Agente', async () => {
+  test(' ser possível buscar o describe da Entidade Agente', async () => {
     const data = await buscarDescribeAgentesMapasDaSaude();
 
     expect(data).not.toBeNull();
