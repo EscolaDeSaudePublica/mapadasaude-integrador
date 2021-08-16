@@ -8,18 +8,14 @@ import Controller from './Controller';
 class SACSController extends Controller {
   async exec() {
     try {
-      const data = await buscarUsuariosSACS();
+      const sacsUsers = await buscarUsuariosSACS();
 
       // Testando com poucos
-      for (let index = 0; index < 10; index++) {
-        const agente = data[index];
+      for (let index = 0; index < sacsUsers.length; index++) {
+        const agente = sacsUsers[index];
 
         const aux = await buscaAgenteMapasDaSaude(agente.email);
 
-        /*
-         * TODO: fazer verificação se o agente já existe
-         * Se existir, atualizar, caso contrário, criar um novo
-         */
         if (aux) {
           editarAgenteMapasDaSaude(aux.id, {
             name: agente.nome,

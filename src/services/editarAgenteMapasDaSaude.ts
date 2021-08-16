@@ -6,22 +6,26 @@ const editarAgenteMapasDaSaude = async (
   agenteId: number,
   agente: AgenteMapasDaSaude
 ) => {
-  const agenteFromData = new FormData();
+  try {
+    const agenteFromData = new FormData();
 
-  // Criando o FormData
-  agenteFromData.append('name', agente.name);
-  agenteFromData.append('documento', agente.documento);
-  agenteFromData.append('emailPublico', agente.emailPublico);
+    // Criando o FormData
+    agenteFromData.append('name', agente.name);
+    agenteFromData.append('documento', agente.documento);
+    agenteFromData.append('emailPublico', agente.emailPublico);
 
-  const { data } = await apiMapasSaude.post(
-    `/agent/single/${agenteId}`,
-    agenteFromData,
-    {
-      headers: agenteFromData.getHeaders(),
-    }
-  );
+    const { data } = await apiMapasSaude.post(
+      `/agent/single/${agenteId}`,
+      agenteFromData,
+      {
+        headers: agenteFromData.getHeaders(),
+      }
+    );
 
-  return data;
+    return data;
+  } catch (error) {
+    // throw new Error('Error: EditarAgenteMapasDaSaude');
+  }
 };
 
 export default editarAgenteMapasDaSaude;

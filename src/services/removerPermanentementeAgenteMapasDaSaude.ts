@@ -1,9 +1,13 @@
 import { apiMapasSaude } from '../api';
 
 const removerPermanentementeAgenteMapasDaSaude = async (agenteId: number) => {
-  const { status } = await apiMapasSaude.get(`/agentes/destroy/${agenteId}`);
+  try {
+    const { status } = await apiMapasSaude.get(`/agentes/destroy/${agenteId}`);
 
-  return status;
+    return status;
+  } catch (error) {
+    return;
+  }
 };
 
 export default removerPermanentementeAgenteMapasDaSaude;
