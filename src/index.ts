@@ -8,18 +8,22 @@ import Controller from './controllers/Controller';
 import MapasDaSaudeController from './controllers/MapasDaSaudeController';
 import SACSController from './controllers/SACSController';
 
-const sacsController: Controller = new SACSController({
-  name: 'SACSController',
+const controllers: Controller[] = [
+  new SACSController({
+    name: 'SACSController',
+  }),
+  new MapasDaSaudeController({
+    name: 'MapasDaSaudeController',
+  }),
+];
+
+// Execulta cada rotina dos controladores meia noite de cada dia
+controllers.forEach((controller) => {
+  console.log(`Init: ${controller.config.name}`);
+
+  cron.schedule('0 0 * * * *', controller.exec);
+
+  console.log(`Done: ${controller.config.name}`);
 });
-
-const mapasDaSaudeController: Controller = new MapasDaSaudeController({
-  name: 'MapasDaSaudeController',
-});
-
-// Executando a cada minuto
-cron.schedule('* * * * *', mapasDaSaudeController.exec);
-cron.schedule('* * * * *', sacsController.exec);
-
-cron.schedule('0 0 * * * *', () => console.log('Diariamente a meia noite'));
 
 console.log('🔥 is alive 🔥');
