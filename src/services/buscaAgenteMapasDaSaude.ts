@@ -13,14 +13,18 @@ interface BuscaAgenteMapasDaSaudeData {
  * @returns
  */
 const buscaAgenteMapasDaSaude = async (emailPublico: string) => {
-  const { data } = await apiMapasSaude.get('/api/agent/findOne', {
-    params: {
-      '@select': 'id,name,emailPublico',
-      emailPublico: `EQ(${emailPublico})`,
-    },
-  });
+  try {
+    const { data } = await apiMapasSaude.get('/api/agent/findOne', {
+      params: {
+        '@select': 'id,name,emailPublico',
+        emailPublico: `EQ(${emailPublico})`,
+      },
+    });
 
-  return data as BuscaAgenteMapasDaSaudeData;
+    return data as BuscaAgenteMapasDaSaudeData;
+  } catch (error) {
+    throw new Error('Error: BuscaAgenteMapasDaSaude');
+  }
 };
 
 export default buscaAgenteMapasDaSaude;

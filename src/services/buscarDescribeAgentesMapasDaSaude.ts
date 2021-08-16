@@ -1,9 +1,15 @@
 import { apiMapasSaude } from '../api';
 
 const buscarDescribeAgentesMapasDaSaude = async () => {
-  const { data } = await apiMapasSaude.get('/api/agent/describe');
+  try {
+    const { data } = await apiMapasSaude.get('/api/agent/describe');
 
-  return data;
+    return data;  
+  } catch (error) {
+    throw new Error('Error: BuscarDescribeAgentesMapasDaSaude');
+  }
+  
+  
 };
 
 export default buscarDescribeAgentesMapasDaSaude;

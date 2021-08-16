@@ -6,6 +6,7 @@ const removerPermanentementeAgenteMapasDaSaude = async (agenteId: number) => {
 
     return status;
   } catch (error) {
+    // Essa rota já espera um erro 302
     return;
   }
 };
