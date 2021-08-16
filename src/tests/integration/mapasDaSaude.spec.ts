@@ -1,10 +1,10 @@
+import { v4 as uuid } from 'uuid';
+import { AgenteMapasDaSaude } from '../../controllers/types';
+import buscaAgenteMapasDaSaude from '../../services/buscaAgenteMapasDaSaude';
 import buscarDescribeAgentesMapasDaSaude from '../../services/buscarDescribeAgentesMapasDaSaude';
 import criarAgenteMapasDaSaude from '../../services/criarAgenteMapasDaSaude';
-import { v4 as uuid } from 'uuid';
-import buscaAgenteMapasDaSaude from '../../services/buscaAgenteMapasDaSaude';
-import { AgenteMapasDaSaude } from '../../controllers/types';
-import removerPermanentementeAgenteMapasDaSaude from '../../services/removerPermanentementeAgenteMapasDaSaude';
 import editarAgenteMapasDaSaude from '../../services/editarAgenteMapasDaSaude';
+import removerPermanentementeAgenteMapasDaSaude from '../../services/removerPermanentementeAgenteMapasDaSaude';
 
 describe('Integração - Api Mapas da Saúde', () => {
   // Agente para teste
