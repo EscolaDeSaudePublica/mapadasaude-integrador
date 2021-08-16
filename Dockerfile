@@ -12,4 +12,6 @@ RUN yarn install
 
 RUN yarn build
 
-CMD ["npm", "start"]
+COPY . .
+
+CMD ["node", "index.js"]
