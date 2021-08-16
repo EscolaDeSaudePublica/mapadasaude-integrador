@@ -8,8 +8,6 @@ const buscarDescribeAgentesMapasDaSaude = async () => {
   } catch (error) {
     throw new Error('Error: BuscarDescribeAgentesMapasDaSaude');
   }
-  
-  
 };
 
 export default buscarDescribeAgentesMapasDaSaude;

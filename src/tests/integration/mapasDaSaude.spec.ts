@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import buscaAgenteMapasDaSaude from '../../services/buscaAgenteMapasDaSaude';
 import { AgenteMapasDaSaude } from '../../controllers/types';
 import removerPermanentementeAgenteMapasDaSaude from '../../services/removerPermanentementeAgenteMapasDaSaude';
+import editarAgenteMapasDaSaude from '../../services/editarAgenteMapasDaSaude';
 
 describe('Integração - Api Mapas da Saúde', () => {
   // Agente para teste
@@ -39,6 +40,24 @@ describe('Integração - Api Mapas da Saúde', () => {
     const data = await buscaAgenteMapasDaSaude(agente.emailPublico);
 
     expect(data).not.toBeNull();
+  });
+
+  test('Deve ser possível editar um Agente', async () => {
+    const data = await buscaAgenteMapasDaSaude(agente.emailPublico);
+
+    agente.emailPublico = 'outro.email@email.com';
+
+    const agenteEditado = await editarAgenteMapasDaSaude(data.id, {
+      name: data.name,
+      documento: agente.documento,
+      emailPublico: agente.emailPublico,
+    });
+
+    console.log(agenteEditado);
+
+    expect(agenteEditado).not.toBeNull();
+
+    expect(agenteEditado.emailPublico).toBe(agente.emailPublico);
   });
 
   test('Deve ser possível remover permanentemente um Agente', async () => {

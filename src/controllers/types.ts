@@ -1,4 +1,3 @@
-// TODO: colocar aqui as informações necessárias
 interface AgenteMapasDaSaude {
   name: string;
   documento: string; // CPF
