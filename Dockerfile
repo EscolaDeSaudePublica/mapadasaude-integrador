@@ -1,11 +1,13 @@
-FROM node:alpine
+FROM node:14 as base
 
 WORKDIR /usr/app
 
 COPY package*.json ./
 
+RUN npm install
+
 COPY . .
 
-RUN yarn install
+# FROM base as production
 
-CMD ["yarn", "start"]
+RUN npm run build
