@@ -90,9 +90,6 @@ Outros comando auxiliáres:
 # rodar testes
 yarn test
 
-# iniciar o projeto em modo desenvolvimento
-yarn dev
-
 # build do projeto
 yarn build
 
