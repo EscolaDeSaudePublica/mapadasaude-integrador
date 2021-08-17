@@ -74,8 +74,27 @@ Variáveis de hambiente:
 Feito isso, agora está na hora de coloca o projeto para funcionar usando o `docker compose`:
 
 ```bash
-# instalando o container usando docker compose
+# build da imagem do container com docker-compose
+docker-compose build
+
+# up da imagem do projeto em modo `desenvolvimento`
+# usando no ambiente de desenvolvimento
 docker-compose up
+
+# up da imagem do projeto em modo `produção`
+# usando no ambiente de produção
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+```
+
+Para facilitar, colocamos dois comando no arquivo [Makefile](.Makefile) para ajudar:
+
+```bash
+# o mesmo que: docker-compose up
+make up
+
+# o mesmo que: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+make up-prod
+
 ```
 
 Se tudo tiver ocorrendo corretamente, será exibita a segunte mensagem:
