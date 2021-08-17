@@ -4,8 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/index.ts",
-    "start": "node dist/index.js",
+    "start": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/index.ts",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "test": "jest --setupFiles --runInBand --detectOpenHandles"
   },
