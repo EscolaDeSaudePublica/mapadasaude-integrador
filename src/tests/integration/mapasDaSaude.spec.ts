@@ -53,8 +53,6 @@ describe('Integração - Api Mapas da Saúde', () => {
       emailPublico: agente.emailPublico,
     });
 
-    console.log(agenteEditado);
-
     expect(agenteEditado).not.toBeNull();
 
     expect(agenteEditado.emailPublico).toBe(agente.emailPublico);
