@@ -4,12 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r dotenv/config --respawn --transpile-only --ignore-watch node_modules src/index.ts",
+    "dev": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules src/index.ts",
     "start": "node dist/index.js",
-    "build": "tsc --build tsconfig.json",
-    "test": "jest --setupFiles dotenv/config"
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
+    "test": "jest --setupFiles --runInBand --detectOpenHandles"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
     "@types/jest": "^26.0.0",
     "@types/jsonwebtoken": "^8.5.2",
     "@types/node-cron": "^2.0.4",

@@ -1,18 +1,32 @@
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
+
+import dotenv from 'dotenv';
+
+// Necessário no início
+dotenv.config();
+
+function generateMapaDaSaudeToken() {
+  return jwt.sign(
+    { pk: process.env.MAPAS_PUBLIC_KEY, tm: Date.now() },
+    process.env.MAPAS_PRIVATE_KEY
+  );
+}
+
+const mapaDaSaudeToken = generateMapaDaSaudeToken();
 
 const apiMapasSaude = axios.create({
   baseURL: process.env.MAPAS_URL,
   headers: {
-    authorization: process.env.MAPAS_JWT,
+    authorization: mapaDaSaudeToken,
     'MapasSDK-REQUEST': 'true',
   },
 });
 
 const apiSACS = axios.create({
-  baseURL: process.env.MAPAS_URL,
+  baseURL: process.env.SACS_URL,
   headers: {
-    authorization: process.env.MAPAS_JWT,
-    'MapasSDK-REQUEST': 'true',
+    Authorization: process.env.SACS_JWT,
   },
 });
 
@@ -24,4 +38,4 @@ const apiSAGU = axios.create({
   },
 });
 
-export { apiMapasSaude, apiSACS, apiSAGU };
+export { apiMapasSaude, apiSACS, apiSAGU, generateMapaDaSaudeToken };

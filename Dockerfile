@@ -1,16 +1,13 @@
-FROM node:alpine
+FROM node:14 as base
 
 WORKDIR /usr/app
 
-RUN npm install -g typescript
-
 COPY package*.json ./
+
+RUN npm install
 
 COPY . .
 
-RUN yarn install
+# FROM base as production
 
-RUN yarn build
-
-CMD ["npm", "start"]
-
+RUN npm run build

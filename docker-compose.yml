@@ -1,8 +1,10 @@
-version: '3'
+version: '3.7'
 
 services:
-  mapadasaude-integrador:
-    build: .
-    command: npm start
-    volumes:
-      - .:/usr/app
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    env_file: .env
+    command: yarn dev
