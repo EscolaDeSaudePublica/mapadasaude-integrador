@@ -8,6 +8,4 @@ RUN npm install
 
 COPY . .
 
-# FROM base as production
-
 RUN npm run build

@@ -6,5 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: base
+    volumes: 
+      - ./src:/usr/app/src
     env_file: .env
     command: yarn dev
